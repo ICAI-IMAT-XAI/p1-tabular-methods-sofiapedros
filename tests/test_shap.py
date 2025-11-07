@@ -110,7 +110,7 @@ def kernel_shap_values(model, X_background: np.ndarray, X_instances: np.ndarray)
 def ours_shap_values(model, X_background: np.ndarray, X_instances: np.ndarray) -> np.ndarray:
     """Compute SHAP values using ShapleyExplainer."""
     explainer = ShapleyExplainer(model.predict, X_background)
-    return explainer.shap_values(X_instances)
+    return explainer.shapley_values(X_instances)
 
 
 # ---------------------------------------------------------------------
